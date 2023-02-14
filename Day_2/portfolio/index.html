@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <ul class="link-group">
+            <li class="link active"><a href="#">Home</a></li>
+            <li class="link"><a href="#">Projects</a></li>
+            <li class="link"><a href="#">About</a></li>
+            <li class="link"><a href="#">Contact</a></li>
+        </ul>
+
+    </div>
+    <!-- homesection -->
+    <div class="home" id="parallax">
+        <div class="image">
+            <img
+                src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80">
+        </div>
+        <div class="heading">
+            <h1>Hello , i am <br> Pratik</h1>
+        </div>
+
+    </div>
+    <div class="about">
+        <img
+            src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80">
+        <div id="box"></div>
+        <div class="aboutus">
+            <h2>About</h2>
+            <hr style="width:300px;">
+            <p><b>My name is Pratik Pawar.</b> I am Full Stack Java Developer.I have knowledge of competitive
+                programming in C++ using STL.
+                Currently Exploring different things in Java . Also Have Knowledge
+                in web development technologies like HTML,CSS,JAVASCRIPT,REACT.
+                I am open work .Thank you!
+            </p>
+        </div>
+
+    </div>
+    <div class="contact">
+        <div class="main1">
+            <div class="contactme">
+                <h2>Contact</h2>
+                <hr style="width:500px;">
+            </div>
+            <div class="info">
+                <h2><span class="material-symbols-outlined">call
+                    </span>+91 9022648952</h2>
+                <h2><span class="material-symbols-outlined">
+                        mail
+                    </span> pratikrpawar321@gmail.com</h2>
+            </div>
+            <button onclick="checkMyLocation()">Get My location</button>
+        </div>
+        <div id="main2">
+        </div>
+
+
+    </div>
+    <script>
+        function checkMyLocation() {
+            navigator.geolocation.getCurrentPosition((positio) => {
+                // locate.innerHTML = "Latitude: " + positio.coords.latitude + 
+                //             "<br>Longitutde: " + positio.coords.longitude;
+
+                var mapProp = {
+                    center: new google.maps.LatLng(positio.coords.latitude, positio.coords.longitude),
+                    zoom: 5,
+                };
+                var map = new google.maps.Map(document.getElementById("main2"), mapProp);
+            });
+        }
+        console.log(window.document.URL);
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4Bju4HXwXp7HlRtB57Mp4rJ9G4iAcPUI&callback=checkMyLocation"></script>
+
+</body>
+
+</html>
