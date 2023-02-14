@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" id="table">
+        <tr>
+            <th> Employee No. </th>
+            <th> Name </th>
+            <th> Salary </th>
+            <th> </th>
+        </tr>
+        <tr>
+            <td> 1 </td>
+            <td> Pratik </td>
+            <td> 100000 </td>
+            <td> <button id="up" onclick="Up(1)"> Up </button><button id="down"> Down </button></td>
+        </tr>
+        <tr>
+            <td> 2 </td>
+            <td> Sarthak </td>
+            <td> 90000 </td>
+            <td> <button onclick="Up(2)"> Up </button><button> Down </button></td>
+        </tr>
+        <tr>
+            <td> 3 </td>
+            <td> Wincy </td>
+            <td> 23000 </td>
+            <td> <button onclick="Up(3)"> Up </button><button> Down </button></td>
+        </tr>
+    </table>
+    <script>
+
+        var table = document.getElementById("table");
+        for (var i = 0; i < table.rows.length; i++) {
+            for (var j = 0; j < table.rows[i].cells[j].length; j++) {
+
+            }
+        }
+        function up(i){
+            var curr=document.getElementById("table");
+            var table=cur.rows[i];
+            var prev=i-1;
+            if(i==1){
+                prev=document.getElementById("table").rows.length;
+            }
+            
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="getMyLocation()"> Location </button>
+    <div id="result"></div>
+    <div id="display" style="width:500px; height: 500px;"></div>
+    <script>
+        // var x=document.getElementById("result");
+        // function getMyLocation() {
+        //      navigator.geolocation.getCurrentPosition((position)=>{
+        //         x.innerHTML="Latitude :"+position.coords.latitude+
+        //         " Longitude :"+position.coords.longitude;
+
+        //     });
+        // }
+        var id = document.getElementById("result");
+        function getMyLocation() {
+            navigator.geolocation.getCurrentPosition((position) => {
+                var mapprop = {
+                    center: new google.maps.Latlng(position.coords.latitude, position.coords.longitude),
+                    zoom: 5,
+                };
+                var map=new google.maps.Map(document.getElementById("display"),mapprop);
+            })
+        }
+
+
+    </script>
+
+</body>
+
+</html>
