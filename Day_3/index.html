@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rect{
+            width: 500px;
+            height: 200px;
+            background-color: black;
+        }
+        #rect2{
+            margin: 10px;
+            background-color: aqua;
+        }
+        @media screen and (min-width:480px){
+            .rect{
+                background-color: red;
+            }
+            
+        }
+        @media screen and (max-width:600px) {
+            .rect{
+                background-color:orange;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="rect">
+        I am div 1
+    </div>
+    <div class="rect" id="rect2">
+        I am div 2
+    </div>
+    <script>
+        function UsingClosures(){
+            for(let i=0;i<5;i++){
+                let link=document.createElement("a");
+                link.innerHTML="Hyperlink"+i;
+                link.onclick=function(){
+                    alert(i);
+                }
+                document.body.appendChild(link);
+            }
+        }
+
+        UsingClosures();
+    </script>
+</body>
+</html>
