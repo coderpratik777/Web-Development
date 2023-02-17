@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style></style>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                navigator.geolocation.getCurrentPosition((position) => {
+
+                    var lat = position.coords.latitude;
+                    var long = position.coords.longitude;
+                    console.log(lat, long);
+                    var key = "138b91f7502c917df454a94449df5c18";
+                    var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
+
+                    var today = new Date();
+                    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                    $("p").text(time);
+
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        success: function (response) {
+                            var h2=$("<h2/>").text(response.weather[0].description);
+                            var city=$("<h1/>").text(response.name);
+                            var temp=response.main.temp-272.15;
+                            var tempMax=$("<span/>").text(temp)
+                            $("div").append(city);
+                            $("div").append(h2);
+                        
+                        }
+                    })
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>Show weather</button>
+    <div class="main">
+        <p></p>
+    </div>
+</body>
+
+</html>

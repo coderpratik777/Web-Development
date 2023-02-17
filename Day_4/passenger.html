@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+        div {
+            margin: 20px;
+            padding: 30px;
+            box-shadow: 1px 1px 8px black;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+        }
+
+        input {
+            border: 0;
+            outline: 0;
+            border-bottom: 2px solid rgb(235, 167, 21);
+        }
+
+        label,
+        input {
+            margin-right: 10px;
+        }
+
+        button {
+            border-radius: 2px;
+            border: 0;
+            outline: 0;
+            background-color: rgb(238, 169, 20);
+            color: white;
+            height: 30px;
+            width: 90px;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+            z-index: 4px;
+            box-shadow: 1px 1px 5px black;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("button").one("click",function (event) {
+                event.preventDefault();
+                var count = $("input").val();
+                for (let i = 1; i <= count; i++) {
+                    var label1 = $("<label/>").text("Passenger "+i+" name:");
+                    var input1 = $("<input/>", { placeholder: 'enter your name:' });
+                    input1.addClass("name");
+                    var label2 = $("<label/>").text("Passenger "+i+" age:");
+                    var input2 = $("<input/>", { placeholder: 'enter your age:' })
+                    input2.addClass("age");
+                    var div=$("<div/>");
+                    div.addClass("data-element");
+                    $(label1).appendTo(div);
+                    $(input1).appendTo(div);
+                    $(label2).appendTo(div);
+                    $(input2).appendTo(div);
+                    $(".main").append(div);
+                }
+                var button=$("<button/>").text("Submit").addClass("submit");
+                $(".main").append(button);
+            })
+
+            $(".main button").click(function(e){
+                e.preventDefault();
+                $.each(".data-element",function(index,value){
+                    var name=$("div").firstchild("input").val;
+                    var age=$("div").lastchild("input").val;
+                    console.log(name);
+                    console.log(age);
+
+                })
+            })
+        })
+
+        // $(function () {
+        //     $("form button").click(function (e) {
+        //         e.preventDefault();
+        //         if ($(this).attr("value") == "continue") {
+        //             var count = $("input").val();
+        //             for (let i = 1; i <= count; i++) {
+        //                 var label1 = $("<label/>").text("Passenger " + i + " name:");
+        //                 var input1 = $("<input/>", { placeholder: 'enter your name:' });
+        //                 input1.addClass("name");
+        //                 var label2 = $("<label/>").text("Passenger " + i + " age:");
+        //                 var input2 = $("<input/>", { placeholder: 'enter your age:' })
+        //                 input2.addClass("age");
+        //                 var div = $("<div/>");
+        //                 div.addClass("data-element");
+        //                 $(label1).appendTo(div);
+        //                 $(input1).appendTo(div);
+        //                 $(label2).appendTo(div);
+        //                 $(input2).appendTo(div);
+        //                 $("form").append(div);
+        //             }
+        //             var button = $("<button/>").text("Submit").attr("value", "submit");
+        //             $("form").append(button);
+        //         }
+        //         if ($(this).attr("value") === "submit") {
+        //             $.each(".data-element", function (index, value) {
+        //                 var name = $("div").firstchild("input").val;
+        //                 var age = $("div").lastchild("input").val;
+        //                 console.log(name);
+        //                 console.log(age);
+
+        //             })
+                   
+        //         }
+
+        //     })
+        // })
+    </script>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label>Enter the number of passengers :</label>
+            <input type="text">
+            <button type="submit" value="continue"> Continue </button>
+        </div>
+    </form>
+    <form class="main"></form>
+</body>
+
+</html>

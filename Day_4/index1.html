@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+        $(function(){
+            // $("#button").click(function(){
+            //     $("#text").text("1,00,000 rs");
+            // })
+            // $("#text").hide();
+            // $("button").click(function(){
+            //     $("#text").show();
+            //     $("Button").hide();
+            // })
+            $("#img").css("display","none");
+            $("button").one("click",function(){
+                var price=$("<p/>").text("69000 rs").attr("style","color:red");
+                $(".product").append(price);
+                $("#img").fadeIn();
+            })
+        //    $("button").click(function()
+        //    {
+        //     var price=$("<p/>").text("69000 rs").attr("style","color:red");
+        //     $(".product").append(price);
+        //    })
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li class="product">
+            <h2>Iphone 14</h2>
+            <p id="text">$999</p>
+            <button id="button">Get price</button>
+            <img id="img" src="https://imgs.search.brave.com/zIy5S27oeGxLFc2JBVVEFmuHUFz_P17E8jvIH7L3miw/rs:fit:338:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5U/MzlMU0JCUllQTm1B/ZFE2TmI0UGJBSGFL/WCZwaWQ9QXBp">
+        </li>
+        <li class="product">
+            <h2>Samsung s20</h2>
+            <button>Get price</button>
+        </li>
+        <li class="product">
+            <h2>Oneplus Nord</h2>
+            <button>Get price</button>
+        </li>
+    </ul>
+</body>
+
+</html>

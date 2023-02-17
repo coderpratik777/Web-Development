@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+        ul{
+            display: flex;
+        }
+        ul li{
+            padding: 40px;
+            list-style: none;
+        }
+        button{
+            border-radius: 2px;
+            height: 34px;
+            width: 100px;
+            outline: none;
+            background-color: black;
+            color: white;
+            box-shadow: 1px 1px 5px black;
+        }
+        button:hover{
+            border: 0;
+            background-color: white;
+            color:black;
+
+        }
+    </style>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                var productElem=$(this).closest(".product");
+                var price=productElem.data("price");
+                var priceEle=$("<p/>").text(price).attr("style","color:red");
+
+                productElem.find("p").remove();
+                productElem.append(priceEle);
+                //$(this).after(priceEle);
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li class="product" data-price="$999">
+            <h2>Iphone 14</h2>
+            <button id="button">Get price</button>
+        <li class="product" data-price="$699">
+            <h2>Samsung s20</h2>
+            <button>Get price</button>
+        </li>
+        <li class="product" data-price="$599">
+            <h2>Oneplus Nord</h2>
+            <button>Get price</button>
+        </li>
+    </ul>
+</body>
+
+</html>

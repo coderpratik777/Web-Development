@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+        $(function(){//logically similar to main function
+            // alert("Jquery loaded")
+            //$("p").css("color","red");
+            $(".abc > p").css("font-size","32px");
+            $(".abc").children("p").css("color","red");
+            $("div:nth-of-type(2)").children("p").css("color","red");
+            //$($("div").get(1)).children("p").css("color","blue"));
+            $("div").last().children("p").css("font-size","30px");
+            $("p").last().css("font-weight",300);
+            $("p").first().css("color","green");
+            $("body").children("p").css("font-size","30px");
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <p>one </p>
+    <div class="abc">
+        <p>Two</p>
+    </div>
+    <div>
+        <p>three</p>
+    </div>
+</body>
+</html>
