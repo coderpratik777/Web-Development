@@ -1,13 +1,13 @@
 .card{
     display: inline-block;
     color: black;
-    padding: 20px;
+    padding: 30px;
     margin: 10px;
-    width: 300px;
+    width: auto;
     box-shadow: 1px 1px 7px black;
 }
 img{
     align-items: center;
-    margin: auto;
+    margin-left: 30%;
     height: 200px;
 }
