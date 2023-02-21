@@ -7,6 +7,7 @@ import Navbar from "./components/website/Navbar";
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Dashboard from "./components/website/Dashboard";
 import Weather from "./components/weather/weather";
+import PhoneBook from "./components/PhoneBook App/PhoneBook";
 
 const route=createBrowserRouter([
   {path:'/',element:<Header/>},
@@ -23,8 +24,9 @@ const route=createBrowserRouter([
 function App() {
   return(
     <div>
-      {/* <Navbar/> */}
-      <RouterProvider router={route}/>
+      {/* <Navbar/>
+      <RouterProvider router={route}/> */}
+      <PhoneBook/>
     </div>
   );
 }

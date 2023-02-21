@@ -1,0 +1,15 @@
+.main{
+    padding: 40px;
+    background-color: white;
+    width: 500px;
+    margin: auto;
+}
+.main2{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    font-size: 15px;
+}
+.searchBar input{
+    width: 100%;
+}

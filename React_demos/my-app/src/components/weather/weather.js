@@ -4,7 +4,7 @@ import axios from 'axios';
 export default function Weather() {
 
     const [cityName, setcityname] = useState('');
-    const [weatherdata,setData]=useState([]);
+    const [weatherdata,setData]=useState();
     function update(event) {
         setcityname(event.target.value);
         console.log(cityName);
@@ -33,7 +33,11 @@ export default function Weather() {
                         
                     })
                 } */}
-                {weatherad}
+                {weatherdata!=null && 
+                <div>
+                        <h2>{weatherdata.weather.main}</h2>
+                        <p>{weatherdata.weather.description}</p>
+                    </div>}
 
                 
             </form>
