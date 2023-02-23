@@ -1,0 +1,11 @@
+<form (ngSubmit)="fetchWeather()">
+   <div class="form-group">
+    <label for="cityname">Enter thr city name</label>
+    <input type="text" [(ngModel)]="cityname" name="cityname"/>
+   </div>
+   <button type="submit" class="btn btn-primary">Fetch weather</button>
+   <div *ngIf="weatherdata">
+    <br>
+     <h1>It's {{temp()}}</h1>
+   </div>
+</form>
